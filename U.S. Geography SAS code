@@ -1,0 +1,87 @@
+/*These are snippets of SAS code and a proc format when dealing with U.S. States/Territories. Helpful to me in coding*/
+
+if STATE in (
+
+'AL',
+'AK',
+'AZ',
+'AR',
+'CA',
+'CO',
+'CT',
+'DE',
+'FL',
+'GA',
+'HI',
+'ID',
+'IL',
+'IN',
+'IA',
+'KS',
+'KY'
+'LA',
+'ME',
+'MD',
+'MA',
+'MI',
+'MN',
+'MS',
+'MO',
+'MT',
+'NE',
+'NV',
+'NH',
+'NJ',
+'NM',
+'NY',
+'NC',
+'ND',
+'OH',
+'OK',
+'OR',
+'PA',
+'RI',
+'SC',
+'SD',
+'TN',
+'TX',
+'UT',
+'VT',
+'VA',
+'WA',
+'WV',
+'WI',
+'WY',
+'DC'
+);
+
+proc format;
+	value $region   'CT' = 'Northeast' 'ME' = 'Northeast' 'MA' = 'Northeast' 'NH' = 'Northeast'
+					'RI' = 'Northeast' 'VT' = 'Northeast' 'NJ' = 'Northeast' 'NY' = 'Northeast' 'PA' = 'Northeast'
+
+					'IL' = 'Midwest' 'IN' = 'Midwest' 'MI' = 'Midwest' 'OH' = 'Midwest' 'WI' = 'Midwest'
+					'IA' = 'Midwest' 'KS' = 'Midwest' 'MN' = 'Midwest' 'MO' = 'Midwest' 'NE' = 'Midwest'
+					'ND' = 'Midwest' 'SD' = 'Midwest'
+
+					'DE' = 'South' 'DC' = 'South' 'FL' = 'South' 'GA' = 'South' 'MD' = 'South' 
+					'NC' = 'South' 'SC' = 'South' 'VA' = 'South' 'WV' = 'South'
+					'AL' = 'South' 'KY' = 'South' 'MS' = 'South' 'TN' = 'South'
+					'AR' = 'South' 'LA' = 'South' 'OK' = 'South' 'TX' = 'South'
+
+					'AZ' = 'West' 'CO' = 'West' 'ID' = 'West' 'MT' = 'West' 'NV' = 'West'
+					'NM' = 'West' 'UT' = 'West' 'WY' = 'West'
+					'AK' = 'West' 'CA' = 'West' 'HI' = 'West' 'OR' = 'West' 'WA' = 'West';
+run;
+
+if COMMENWEALTH_TERRITORY in (
+'AS',
+'DC',
+'FM',
+'GU',
+'MH',
+'MP',
+'PW',
+'PR',
+'VI'
+);
+
